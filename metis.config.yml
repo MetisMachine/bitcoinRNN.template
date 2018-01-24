@@ -1,0 +1,8 @@
+project_token: {{token}}
+name: {{name}}
+language: python
+entrypoint: main.py
+resources:
+  limits:
+    cpu: 6
+    memory: 2Gi
