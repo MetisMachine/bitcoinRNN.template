@@ -18,7 +18,7 @@ from torch.autograd import Variable
 # Specify what data to use from quandl
 # Here we grab bitcoin prices & market data
 COIN = "BCHARTS/BITSTAMPUSD" 
-API = #<insert API key here>
+API = #insert quandl API key here
 DATASETS = [COIN, "BCHAIN/CPTRA", "BCHAIN/NTRAT"]
 
 ## Set the quandl api key so we can access historical coin data
