@@ -5,7 +5,7 @@
 
 ## Import some needed dependencies
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 import pandas as pd
 import numpy as np
 import quandl
@@ -200,12 +200,13 @@ previous_close_price = df.loc[last_day:].close_price.values[0]
 
 # Get the prediction and date value
 predicted_price = (predicted_value + 1)*previous_close_price
-prediction_date = pd.to_datetime(day_index_map.get(last_day), "%Y-%m-%d")
+prediction_date = pd.to_datetime(day_index_map.get(last_day), "%Y-%m-%d").date() \
+    + timedelta(days=1)
 
 print("The RNN predicts the closing price for: \n%s to be %s $" % (prediction_date, predicted_price), flush=True)
 
 data_out = [{'price_prediction': predicted_price,
-         'date': prediction_date.date(),
+         'date': prediction_date,
          'date_updated': datetime.strftime(datetime.now(), "%Y-%m-%d %H:%M:%S"),
          'coin': 'bitcoin'}]
 
