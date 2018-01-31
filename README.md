@@ -15,7 +15,7 @@ The project represents the bare bones of what it takes to build a sophisticated 
 
 
 
-#Legal Disclaimer 
+### Legal Disclaimer 
 
 NOTHING IN THIS SITE CONSTITUTES OR SHOULD BE CONSTRUED AS PROVIDING FINANCIAL, INVESTMENT, BROKERAGE, TAX, ACCOUNTING, OR LEGAL ADVICE. 
 
