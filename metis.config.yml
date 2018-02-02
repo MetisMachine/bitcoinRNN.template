@@ -7,5 +7,5 @@ project_tasks:
      entrypoint: main.py
      resources:
        limits:
-       cpu: 6
-       memory: 2Gi
+         cpu: 6
+         memory: 2Gi
