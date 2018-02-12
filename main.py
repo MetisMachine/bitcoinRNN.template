@@ -48,8 +48,11 @@ gtrends_json = skafos.engine.query("SELECT * from gtrends WHERE keyword IN ('bit
 print("Validating a single record:", flush=True)
 print(gtrends_json['data'][0], flush=True)
 
-# Convert to pandas df
-gtrends = pd.DataFrame.from_records(gtrends_json['data'])    .pivot(index='date', values='interest', columns='keyword')
+# Convert to pandas df and handles string NaN's coming through data engine
+gtrends = pd.DataFrame.from_records(gtrends_json['data'])\
+    .pivot(index='date', values='interest', columns='keyword')\
+    .replace({'NaN': None})\
+    .fillna(method='pad')
 
 # Set proper date format
 gtrends.index = pd.to_datetime(gtrends.index)
