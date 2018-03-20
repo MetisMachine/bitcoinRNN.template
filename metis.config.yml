@@ -1,8 +1,11 @@
 project_token: {{token}}
 name: {{name}}
-language: python
-entrypoint: main.py
-resources:
-  limits:
-    cpu: 6
-    memory: 2Gi
+jobs:
+  - job_id: {{job_id}}
+    language: python
+    name: Main
+    entrypoint: main.py
+    resources:
+      limits:
+        cpu: 6
+        memory: 2Gi
